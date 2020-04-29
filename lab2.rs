@@ -7,7 +7,7 @@ pub fn main() {
 }
 
 fn greet(name: &String) {
-    println!("Hello, {}!", name);
+    println!("Hello, {}!", &name[3..]);
 }
 
 // But #1: Convertir `greet` pour utiliser l'emprunt, et non la possession,
