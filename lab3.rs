@@ -2,7 +2,7 @@
 
 pub fn main() {
     let (mut str1, str2) = two_words();
-    str1 = join_words(str1, str2);
+    str1 = join_words(str1, &str2);
     println!("concatenated string is {:?}", str1);
 }
 
@@ -11,7 +11,7 @@ fn two_words() -> (String, String) {
 }
 
 /// Concatène `suffix` à la fin de `prefix`.
-fn join_words(mut prefix: String, suffix: String) -> String {
+fn join_words(mut prefix: String, suffix: &String) -> String {
     prefix.push(' '); // on sépare les mots avec un espace
     for ch in suffix.chars() {
         prefix.push(ch);
@@ -28,6 +28,7 @@ fn join_words(mut prefix: String, suffix: String) -> String {
 // Question: Maintenant que vous avez converti `join_words`, que se passe-t-il
 // si vous appelez `join_words` en utilisant le même string pour `prefix` et
 // `suffix`? Pourquoi?
+// Value borrowed after move because join_words become owner of the string, we can't give it as an argument.
 
 
 
