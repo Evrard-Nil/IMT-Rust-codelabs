@@ -2,11 +2,11 @@
 
 pub fn main() {
     let string = format!("my friend");
-    greet(string.clone());
-    greet(string);
+    greet(&string.clone());
+    greet(&string);
 }
 
-fn greet(name: String) {
+fn greet(name: &String) {
     println!("Hello, {}!", name);
 }
 
