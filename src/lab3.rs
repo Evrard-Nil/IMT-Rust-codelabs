@@ -11,7 +11,7 @@ fn two_words() -> (String, String) {
 }
 
 /// Concatène `suffix` à la fin de `prefix`.
-fn join_words(&mut prefix: String, suffix: &String) -> String {
+fn join_words(mut prefix: String, suffix: &String) -> String {
     prefix.push(' '); // on sépare les mots avec un espace
     for ch in suffix.chars() {
         prefix.push(ch);
@@ -35,12 +35,12 @@ fn join_words(&mut prefix: String, suffix: &String) -> String {
 // fn strcat(prefix: &mut String, suffix: &String) {
 //     ...
 // }
-// 
+//
 // Maintenant, `prefix` est une référence mutable vers un String de l'appelant.
 // Une référence mutable est nécessaire pour pouvoir modifier le String.
-// 
+//
 // `suffix` est une référence partagée. Une référence partagée suffit parce que
 // on ne fait que lire dans `suffix`.
-// 
+//
 // La valeur de retour change aussi: puisque l'on modifier `prefix` en place,
 // il n'y a plus besoin de retourner quoi que ce soit.
