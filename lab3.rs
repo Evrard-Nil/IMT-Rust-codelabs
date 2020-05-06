@@ -11,7 +11,7 @@ fn two_words() -> (String, String) {
 }
 
 /// Concatène `suffix` à la fin de `prefix`.
-fn join_words(mut prefix: String, suffix: &String) -> String {
+fn join_words(&mut prefix: String, suffix: &String) -> String {
     prefix.push(' '); // on sépare les mots avec un espace
     for ch in suffix.chars() {
         prefix.push(ch);
@@ -29,35 +29,6 @@ fn join_words(mut prefix: String, suffix: &String) -> String {
 // si vous appelez `join_words` en utilisant le même string pour `prefix` et
 // `suffix`? Pourquoi?
 // Value borrowed after move because join_words become owner of the string, we can't give it as an argument.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // Indice: Vous voulez changer la signature de `join_words` comme suit:
 //
