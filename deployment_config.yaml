@@ -1,0 +1,3 @@
+name: IMT-rust-codelabs
+summary: A collection of Rust exercises focusing on core language concepts like move semantics, strings, structs, enums, and threads.
+environment_variables: []
